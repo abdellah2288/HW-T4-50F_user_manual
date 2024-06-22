@@ -343,7 +343,7 @@ Powering the HW-T4-50F is a windows 7 computer, containing the needed software, 
  \end{figure}
  \begin{figure}[!htb]
  \centering
- \includegraphics[width=.5\textwidth]{images/computer.png}
+ \includegraphics[width=.4\textwidth]{images/computer.png}
  \caption{HW-T4-50F's central computer}
  \end{figure}
 
@@ -700,7 +700,7 @@ The user must fill the \textbf{Provider}, \textbf{Noz} , \textbf{Camera}, \textb
  \item \textbf{Provider: } Meaning the type of feeder that will be providing the component.
  \item \textbf{Noz: } The nozzle size compatible with the component's package.
  \item \textbf{Camera: } The camera responsible for component recognition.
- \item \textbf{Loop Mode: } Refers to the control algorithm used for the pick and place process.
+ \item \textbf{Loop Mode: } Refers to the control algorithm used for the pick and place process. Check the \textbf{\hyperref[sec:loop]{section on loop modes for more details}}.
 \end{itemize}
 \begin{figure}[!htb]
  \centering
@@ -721,6 +721,17 @@ Closing this window, the table will be updated with the new feeder/slot values.
  \caption{Feeder optimization table}
 \end{figure}
 The user must then manually insert every feeder into the appropriate slot.
+\newpage
+\subsection{Camera Loop modes}
+\label{sec:loop}
+While configuring a pick and place machine, there are different visual inspection loop modes. Choosing the right one is a compromise between speed and precision.
+\subsubsection{Open loop}
+In the open loop mode, the machine performs one correction pass after placing the component. This means the machine places the component, checks its position, and makes one adjustment if necessary. After this single correction, the machine does not verify the placement again. This mode is faster but might not achieve the highest accuracy, as it relies on a single correction pass to ensure the component is placed correctly.
+\subsubsection{Half loop}
+In the half loop mode, the machine performs both correction and verification once. After placing the component, the machine checks its position and makes an adjustment if needed. Then, it verifies the position again to ensure the correction was successful. This mode balances speed and accuracy, providing a higher level of assurance that components are placed correctly compared to the open loop mode, but with less time and resource investment than a continuous correction process.
+\subsubsection{Closed loop}
+The closed loop mode is available only on the \textbf{High Cam} and involves a continuous correction process until the correct angle and position are verified. In this mode, the machine places the component and continuously checks and adjusts its position until it meets the required specifications. This process ensures the highest level of accuracy but can be more time-consuming and resource-intensive. The continuous feedback and adjustment loop guarantee that the component is placed exactly as needed, making it ideal for applications requiring precise placement.
+
 \newpage
 \subsection{Feeder calibration}
 After clicking on the \textbf{"Feeder Para"} button the user will be presented with the following configuration window.
